@@ -1,0 +1,14 @@
+[Unit]
+Description=Daemon service to monitor available screen devices - TP1 Software Libre - Martin Casas - Ivan Arpea
+Documentation=See readme file
+After=network.target
+
+[Service]
+Environment=NODE_PORT=3001
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/node /home/ubuntu/tp1_script.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
